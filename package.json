@@ -1,0 +1,23 @@
+{
+  "name": "to-do-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ztlaw/to-do-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ztlaw/to-do-app/issues"
+  },
+  "homepage": "https://github.com/ztlaw/to-do-app#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
