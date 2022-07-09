@@ -21,6 +21,14 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true}) //connecting d
         db = client.db(dbName)
     })
 
+
+    app.set('view engine', 'ejs') //middleware
+    app.use(express.static('public'))
+    app.use(express.urlencoded({extended: true}))
+    app.use(express.json())
+
+
+
 // root directory
 app.get('/', (req, res) => {
   res.send('<h1>Test</h1>')
