@@ -28,7 +28,7 @@ app.use(express.json());
 
 // root directory
 app.get("/", (req, res) => {
-  res.send("<h1>Test</h1>");
+  res.render("index.ejs");
 });
 
 // req and res are short for request and response
