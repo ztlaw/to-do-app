@@ -15,45 +15,25 @@
     <div class="current-tasks">
       <h2>Tasks:</h2>
       <ul>
+        <% for(var i = 0; i < tasks.length; i++) {%>
+
         <li>
           <div class="task">
-            <p class="task-description">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea quos
-              ab at iste officia corrupti, voluptate ullam officiis, tempore
-              nesciunt nobis soluta illo molestias explicabo, magni architecto
-              quae eius nam?
-            </p>
+            <p class="task-description"><%= tasks[i].taskDescription %></p>
             <div class="task-controls">
               <i class="bi bi-pencil-square" title="edit"></i>
               <i class="bi bi-x-circle" title="delete"></i>
             </div>
           </div>
         </li>
-        <li>
-          <div class="task">
-            <p class="task-description">Task2</p>
-            <div class="task-controls">
-              <i class="bi bi-pencil-square" title="edit"></i>
-              <i class="bi bi-x-circle" title="delete"></i>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="task">
-            <p class="task-description">Task 3</p>
-            <div class="task-controls">
-              <i class="bi bi-pencil-square" title="edit"></i>
-              <i class="bi bi-x-circle" title="delete"></i>
-            </div>
-          </div>
-        </li>
+        <% } %>
       </ul>
     </div>
 
     <div class="add-tasks">
       <h2>Add a new Task</h2>
       <form action="/" method="post">
-        <textarea placeholder="New Task..." name="task-description"></textarea>
+        <textarea placeholder="New Task..." name="taskDescription"></textarea>
         <button type="submit">Submit task</button>
       </form>
     </div>
