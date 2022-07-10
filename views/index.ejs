@@ -1,12 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
     <title>To-do-app</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <div class="current-tasks">
+      <h2>Tasks:</h2>
+      <ul>
+        <% for(var i = 0; i < tasks.length; i++) {%>
+
+        <li>
+          <div class="task">
+            <p class="task-description"><%= tasks[i].taskDescription %></p>
+            <div class="task-controls">
+              <i class="bi bi-pencil-square" title="edit"></i>
+              <i class="bi bi-x-circle" title="delete"></i>
+            </div>
+          </div>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+
+    <div class="add-tasks">
+      <h2>Add a new Task</h2>
+      <form action="/" method="post">
+        <textarea placeholder="New Task..." name="taskDescription"></textarea>
+        <button type="submit">Submit task</button>
+      </form>
+    </div>
+  </body>
 </html>

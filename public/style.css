@@ -1,0 +1,72 @@
+/*Colors
+  Primary: #1a237e;
+  Primary-Light: #534bae;
+  Primary-Dark: #000051;
+  Text: #fff;
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #1a237e;
+}
+
+ul {
+  list-style: none;
+}
+
+.current-tasks {
+  margin: 1em;
+}
+
+.task {
+  border: 1px solid #fff;
+  margin: 1em auto;
+  padding: 0.2em;
+  border-radius: 0.2em;
+  display: flex;
+  padding: 1em;
+  gap: 1em;
+  background-color: #534bae;
+}
+
+.task-controls {
+  margin-left: auto;
+  min-width: 40px;
+}
+
+.add-tasks {
+  margin: 1em;
+}
+.add-tasks textarea {
+  background-color: #534bae;
+  border: 1px solid #fff;
+  padding: 1em;
+  width: 100%;
+  margin: 1em 0;
+  border-radius: 0.2em;
+}
+
+.add-tasks button {
+  padding: 0.5em 1em;
+  display: block;
+  margin: 0 auto;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 10em;
+  background-color: #000051;
+}
+
+.bi {
+  cursor: pointer;
+}
