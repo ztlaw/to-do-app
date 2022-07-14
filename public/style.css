@@ -46,13 +46,21 @@ ul {
 .add-tasks {
   margin: 1em;
 }
-.add-tasks textarea {
+.add-tasks textarea,
+.task textarea {
   background-color: #534bae;
   border: 1px solid #fff;
   padding: 1em;
   width: 100%;
   margin: 1em 0;
   border-radius: 0.2em;
+  resize: none;
+}
+
+.task textarea {
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
 .add-tasks button {
@@ -69,4 +77,20 @@ ul {
 
 .bi {
   cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+form.edit {
+  width: 100%;
+  font-size: 0;
+}
+
+.btn.edit {
+  width: 100px;
+  padding: 0.25px 0.5px;
+  color: #000051;
+  margin-top: 5px;
 }
