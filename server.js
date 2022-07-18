@@ -62,6 +62,19 @@ app.put('/', (req, res) => {
     })
 })
 
+//back-end delete method. front end will send and fetch information
+app.delete('/deleteTask', (req, res) => {
+  db.collection('tasks').deleteOne({
+    _id: ObjectId(req.body._id) //deleteOne method filters the tasks ID to find and delete
+  })        
+      .then(result =>{
+    console.log('Task Deleted')
+    res.json('Task Deleted')
+    })
+})
+
+
 app.listen(process.env.PORT || PORT, () => {
   console.log(`Server listening at http://localhost:${PORT}`)
 })
+
