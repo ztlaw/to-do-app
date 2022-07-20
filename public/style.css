@@ -46,6 +46,7 @@ ul {
 .add-tasks {
   margin: 1em;
 }
+
 .add-tasks textarea,
 .task textarea {
   background-color: #534bae;
@@ -57,10 +58,18 @@ ul {
   resize: none;
 }
 
+p.task-description {
+  padding: 0.25rem;
+}
+
 .task textarea {
   border: none;
-  padding: 0;
+  padding: 0.25rem;
   margin: 0;
+}
+
+.active textarea {
+  outline: 1px solid rgba(255, 255, 255, 0.75);
 }
 
 .add-tasks button {

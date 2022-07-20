@@ -2,12 +2,13 @@
 const ul = document.querySelector('ul')
 
 ul.addEventListener('click', (e) => {
-  if (Array.from(e.target.classList).includes('modify')) {
+  if (Array.from(e.target.classList).includes('bi-pencil-square')) {
     const [paragraph, text] = Array.from(
       e.target.parentNode.parentNode.children
     )
     paragraph.classList.toggle('hidden')
     text.classList.toggle('hidden')
+    text.classList.toggle('active')
   }
 })
 
@@ -39,36 +40,30 @@ Array.from(document.querySelectorAll('form.edit')).forEach((el) => {
   el.addEventListener('submit', proeccessSubmission)
 })
 
-
-//Adding event listener for DELETE methods 
+//Adding event listener for DELETE methods
 const deleteTaskBtn = document.querySelectorAll('.bi-x-circle') //adding selector to all X buttons
 
-Array.from(deleteTaskBtn).forEach( element => {
+Array.from(deleteTaskBtn).forEach((element) => {
   element.addEventListener('click', taskDelete) // adding click event to each X button
 })
 
-async function taskDelete(){
+async function taskDelete() {
   const taskId = this.parentNode.parentNode.id // looking into the task element and grabbing its ID given from MongoDB
   console.log(taskId)
 
-      try{
-          const response = await fetch('/deleteTask', { // awaiting data to come from deleteExercise ping
-              method: 'delete',
-              headers: {'Content-Type': 'application/json'},
-              body: JSON.stringify({
-                '_id': taskId
-              })
-            })
-          const data = await response.json()
-          console.log(data)
-          location.reload()
-  
-      }catch(err){
-          console.log(err)
-      
-      }
-
-
-
-   
+  try {
+    const response = await fetch('/deleteTask', {
+      // awaiting data to come from deleteExercise ping
+      method: 'delete',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        _id: taskId,
+      }),
+    })
+    const data = await response.json()
+    console.log(data)
+    location.reload()
+  } catch (err) {
+    console.log(err)
   }
+}
