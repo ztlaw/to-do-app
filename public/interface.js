@@ -2,6 +2,7 @@
 const ul = document.querySelector('ul')
 
 ul.addEventListener('click', (e) => {
+  
   if (Array.from(e.target.classList).includes('bi-pencil-square')) {
     const [paragraph, text] = Array.from(
       e.target.parentNode.parentNode.children
@@ -9,6 +10,8 @@ ul.addEventListener('click', (e) => {
     paragraph.classList.toggle('hidden')
     text.classList.toggle('hidden')
     text.classList.toggle('active')
+    console.log(paragraph)
+    console.log(text)
   }
 })
 
