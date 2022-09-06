@@ -21,8 +21,8 @@
           <div id="<%= tasks[i]._id%>" class="task">
             <p class="task-description"><%= tasks[i].taskDescription %></p>
             <form action="/" method="put" class="edit hidden">
-              <textarea class="task-description">
-<%= tasks[i].taskDescription %></textarea
+              <textarea class="task-description" >
+ <%= tasks[i].taskDescription %></textarea
               >
               <button class="btn edit" type="submit">Edit</button>
             </form>

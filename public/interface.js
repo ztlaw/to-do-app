@@ -6,19 +6,22 @@ ul.addEventListener('click', (e) => {
   if (Array.from(e.target.classList).includes('bi-pencil-square')) {
     const [paragraph, text] = Array.from(
       e.target.parentNode.parentNode.children
-    )
+    ) 
+   
     paragraph.classList.toggle('hidden')
     text.classList.toggle('hidden')
     text.classList.toggle('active')
     console.log(paragraph)
     console.log(text)
-  }
+    console.log(e.target.parentNode.parentNode.children)
+  } else console.log('that was a different button')
 })
 
 const proeccessSubmission = (e) => {
   e.preventDefault()
   const id = e.target.parentNode.id
   const taskDescription = e.target.children[0].value
+  console.log(e)
   const options = {
     method: 'PUT', // *GET, POST, PUT, DELETE, etc.
     mode: 'cors', // no-cors, *cors, same-origin
@@ -34,7 +37,7 @@ const proeccessSubmission = (e) => {
   }
 
   fetch('http://localhost:3001/', options).then((res) => {
-    location.reload()
+   location.reload()
   })
 }
 
